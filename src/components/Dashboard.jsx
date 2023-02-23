@@ -25,7 +25,9 @@ const Dashboard = () => {
         {/* HEADER BİTİŞ */}
         {/* BODY BAŞLANGIÇ */}
         <div className='flex'>
-            <div className='w-[65%] h-[calc(100vh_-_100px)]  border-r border-gray-300 border-opacity-20 mt-4 '>
+            <div className='w-[65%] h-[calc(100vh_-_100px)] border-r border-gray-300 border-opacity-20 mt-4 flex flex-col gap-y-5'>
+                <CoinTracking/>
+                <CoinTracking/>
                 <CoinTracking/>
             </div>
             <div className='w-[40%] h-[calc(100vh_-_100px)]  '>
