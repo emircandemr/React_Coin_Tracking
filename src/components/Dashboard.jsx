@@ -21,16 +21,12 @@ const Dashboard = () => {
         console.log(pageNumber)
         if(pageNumber > Math.ceil(coinList.length / coinsPerPage)) {
             setCurrentPage((currentPage) => currentPage + 1)
-            console.log(currentPage)
-            console.log( Math.ceil(coinList.length / coinsPerPage))
         }
         setCurrentCoinList(pageNumber)
     }
 
     useEffect(() => {
         dispatch(getCoins(currentPage))
-        console.log('currentPage', currentPage)
-        console.log(coinList)
     }, [currentPage, dispatch])
     
     
