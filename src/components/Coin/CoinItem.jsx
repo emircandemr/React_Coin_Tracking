@@ -2,10 +2,10 @@ import React from 'react'
 import {FaLongArrowAltUp,FaLongArrowAltDown,FaStar} from 'react-icons/fa'
 import {BiTrendingDown,BiTrendingUp} from 'react-icons/bi'
 import { useDispatch, useSelector } from 'react-redux'
-import { addCoin } from '../store/Slice/coin-slice'
+import { addCoin } from '../../store/Slice/coin-slice'
 import { Link } from 'react-router-dom'
 
-const CoinTracking = (props) => {
+const CoinItem = (props) => {
     const {coin} = props
     const dispatch = useDispatch()
 
@@ -14,7 +14,7 @@ const CoinTracking = (props) => {
     }
 
   return (
-    <div className='w-[99%] h-28 bg-[#121212] hover:bg-[#212121] pl-2 rounded-lg flex items-center relative cursor-pointer'>
+    <div className='w-[98%] h-28 bg-[#121212] hover:bg-[#212121] pl-2 rounded-lg flex items-center relative cursor-pointer'>
         <Link to={`/coin/${coin.id}`} className='w-full h-full flex items-center gap-x-10' >  
             <div className='h-full min-w-[20%]  flex items-center'>
                 <img src={coin.image} alt="" className='w-12 rounded-full'/>
@@ -39,7 +39,7 @@ const CoinTracking = (props) => {
                 </span>            
             </div>
             <div className='min-w-[12%]  h-full flex flex-col justify-center'>
-                <span className='text-sm font-Unbounded text-green-500'>${coin.low_24h}</span>
+                <span className='text-sm font-Unbounded text-red-500'>${coin.low_24h}</span>
                 <span className='text-xs mt-2 text-left text-gray-500 opacity-80  font-Unbounded'>
                     Low 24h
                 </span>            
@@ -62,4 +62,4 @@ const CoinTracking = (props) => {
   )
 }
 
-export default CoinTracking
+export default CoinItem

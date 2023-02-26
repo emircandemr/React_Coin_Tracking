@@ -26,14 +26,8 @@ export const getTrendingCoins = createAsyncThunk("coin/getTrendingCoins", async 
     return response.data.coins;
 });
 
-export const getCoinHistory = createAsyncThunk("coin/getCoinHistory", async (id,day) => {
-    console.log(day)
+export const getCoinHistory = createAsyncThunk("coin/getCoinHistory", async (id) => {
     const response = await baseHTTP.get(`coins/${id}/market_chart`, { params: { days : 7 } });
-    response.data.prices.map((coin) => {
-    
-        // coin[1] = coin[1].toFixed(3);
-    })
-    console.log(response.data.prices)
     return response.data.prices;
 });
 
@@ -45,6 +39,8 @@ export const coinSlice = createSlice({
         coin : {},
         trendingCoins : [],
         coinHistory : {},
+        status : 'idle',
+        statusChart : 'idle'
     },
     reducers: {
         addCoin: (state, action) => {
@@ -57,17 +53,33 @@ export const coinSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
+        builder.addCase(getCoins.pending, (state, action) => {
+            state.status = 'pending'
+        });
         builder.addCase(getCoins.fulfilled, (state, action) => {
             state.coinList = [...state.coinList, ...action.payload]
-      });
+            state.status = 'succeeded'
+        });
+      builder.addCase(getCoinDetail.pending, (state, action) => {
+        state.status = 'pending'
+        });
         builder.addCase(getCoinDetail.fulfilled, (state, action) => {
             state.coin = action.payload
+            state.status = 'succeeded'
         });
+        builder.addCase(getTrendingCoins.pending, (state, action) => {
+            state.status = 'pending'
+            });
         builder.addCase(getTrendingCoins.fulfilled, (state, action) => {
             state.trendingCoins = action.payload
+            state.status = 'succeeded'
+        });
+        builder.addCase(getCoinHistory.pending, (state, action) => {
+            state.statusChart = 'pending'
         });
         builder.addCase(getCoinHistory.fulfilled, (state, action) => {
             state.coinHistory = action.payload
+            state.statusChart = 'succeeded'
         }
         );
     }

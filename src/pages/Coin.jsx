@@ -1,5 +1,5 @@
 import React from 'react'
-import CoinDetail from '../components/CoinDetail'
+import CoinDetail from '../components/Coin/CoinDetail'
 
 const Coin = () => {
   return (

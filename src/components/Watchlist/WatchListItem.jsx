@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaLongArrowAltDown, FaLongArrowAltUp } from 'react-icons/fa'
 
-const CoinItem = (props) => {
+const WatchlistItem = (props) => {
     const {coin} = props
   return (
     <div className='w-36 h-32 bg-[#121212] hover:bg-[#212121] p-2 rounded-lg flex flex-col justify-between items-center' >
@@ -25,4 +25,4 @@ const CoinItem = (props) => {
   )
 }
 
-export default CoinItem
+export default WatchlistItem
