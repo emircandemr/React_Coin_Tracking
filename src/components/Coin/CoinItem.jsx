@@ -8,10 +8,14 @@ import { Link } from 'react-router-dom'
 const CoinItem = (props) => {
     const {coin} = props
     const dispatch = useDispatch()
+    const {trackingCoins } = useSelector(state => state.coinTracking)
 
     const handleFavorite = (coin) => {
         dispatch(addCoin(coin))
     }
+
+    const isFavorite = trackingCoins.find((item) => item.id === coin.id)
+
 
   return (
     <div className='w-[98%] h-28 bg-[#121212] hover:bg-[#212121] pl-2 rounded-lg flex items-center relative cursor-pointer'>
@@ -54,9 +58,11 @@ const CoinItem = (props) => {
             </div>
         </Link>
         <button 
-        onClick={() => {handleFavorite(coin)}}
-        className='absolute top-2 right-3'>
-            <FaStar className='hover:text-secondary'/>
+            onClick={() => {handleFavorite(coin)}}
+            className={`absolute top-2 right-3 ${isFavorite ? 'cursor-not-allowed' : '' } `}
+            disabled={isFavorite ? true : false}
+            >
+            <FaStar className={`hover:text-secondary ${isFavorite ? 'text-secondary' : 'text-white' } `}/>
         </button>
     </div>
   )

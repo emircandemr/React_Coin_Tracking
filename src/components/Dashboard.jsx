@@ -13,7 +13,7 @@ const Dashboard = () => {
     const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
 
   return (
-    <section className='w-full h-screen bg-primary p-5 overflow-hidden   '>
+    <section className='w-full h-screen pt-3 bg-primary overflow-hidden   '>
         {status === 'pending' && <Loading/>}
         <div className='container mx-auto flex flex-col text-white'> 
             <Header search={search} setSearch={setSearch} setIsSearchModalOpen ={setIsSearchModalOpen}  />
@@ -21,8 +21,8 @@ const Dashboard = () => {
                 <CoinList/>
                 <WatchList/>
             </div>
-            {isSearchModalOpen && <CoinSearch />}
         </div>
+            {isSearchModalOpen && <CoinSearch setIsSearchModalOpen={setIsSearchModalOpen}  />}
     </section>
   )
 }

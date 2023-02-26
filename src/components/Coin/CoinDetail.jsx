@@ -26,7 +26,7 @@ const CoinDetail = () => {
             </div>
             <div className='w-full h-[60%] mt-5 flex justify-between'>
                 <div className='w-[70%] min-h-full '>
-                    {statusChart === 'succeeded' && <CoinChart coinData={coinHistory} />}
+                    {statusChart === 'succeeded' && <CoinChart name={coin.name} coinData={coinHistory} />}
                 </div>
                 <CoinTrending/>
             </div>

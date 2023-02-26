@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import WatchlistItemtItem from './WatchListItem'
+import WatchlistItem from './WatchListItem'
 
 const WatchList = () => {
 
@@ -14,7 +14,7 @@ const WatchList = () => {
             </div>
             <div className='flex flex-wrap justify-center gap-3' >
             {trackingCoins.map((coin) => (
-                <WatchlistItemtItem key={coin.id} coin={coin}/>
+                <WatchlistItem key={coin.id} coin={coin}/>
                 ))}
             </div>
         </div>

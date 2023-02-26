@@ -1,10 +1,11 @@
 import React from 'react'
 import { FaLongArrowAltDown, FaLongArrowAltUp } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const WatchlistItem = (props) => {
     const {coin} = props
   return (
-    <div className='w-36 h-32 bg-[#121212] hover:bg-[#212121] p-2 rounded-lg flex flex-col justify-between items-center' >
+    <Link to={`/coin/${coin.id}`} className='w-44 h-32 bg-[#121212] hover:bg-[#212121] p-2 rounded-lg flex flex-col justify-between items-center' >
         <div className='flex justify-center items-center'>
             <img src={coin.image} alt="" className='w-11 rounded-full' />
             <div className='min-w-1/2 flex flex-col ml-2 '>
@@ -21,7 +22,7 @@ const WatchlistItem = (props) => {
                 {coin.price_change_24h}
             </span>            
         </div>
-    </div>
+    </Link>
   )
 }
 

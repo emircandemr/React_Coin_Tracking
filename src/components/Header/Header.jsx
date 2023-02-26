@@ -1,10 +1,21 @@
 import React from 'react'
 import { FaHome, FaSearch } from 'react-icons/fa'
+import { useDispatch } from 'react-redux'
+import { getCoinHistory, getCoinQuery } from '../../store/Slice/coin-slice'
 
 const Header = ({search,setSearch,setIsSearchModalOpen}) => {
 
+  const dispatch = useDispatch()
+
   const handleSearch = (e) => {
     setSearch(e.target.value)
+  }
+
+  const handleSearchModal = () => {
+    setIsSearchModalOpen(true)
+    dispatch(getCoinQuery(search))
+    dispatch(getCoinHistory(search))
+    setSearch('')
   }
 
   return (
@@ -20,7 +31,7 @@ const Header = ({search,setSearch,setIsSearchModalOpen}) => {
                   type="text" 
                   value={search}
                   onChange={handleSearch}
-                  onKeyDown = {(e) => { if (e.key === 'Enter') { setIsSearchModalOpen(true) } }}
+                  onKeyDown = {(e) => { if (e.key === 'Enter') { handleSearchModal() } }}
                   className="w-full h-full bg-transparent outline-none px-2 text-sm placeholder:text-[#454444] font-Unbounded " 
                   placeholder="Search" />
             </div>

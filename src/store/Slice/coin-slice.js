@@ -1,5 +1,7 @@
 import {createSlice , createAsyncThunk} from "@reduxjs/toolkit";
+import axios from "axios";
 import { baseHTTP } from "../../services/baseHTTP";
+import { getFavoriteCoins, removeFavoriteCoin, setFavoriteCoin } from "../../services/localStorage";
 
 export const getCoins = createAsyncThunk("coin/getCoins", async (currentPage) => {
     const response = await baseHTTP.get('coins/markets', { params: { page : currentPage } })
@@ -31,25 +33,34 @@ export const getCoinHistory = createAsyncThunk("coin/getCoinHistory", async (id)
     return response.data.prices;
 });
 
+export const getCoinQuery = createAsyncThunk("coin/getCoinQuery", async (query) => {
+    const response = await axios.get(`https://api.coingecko.com/api/v3/search?query=${query}`)
+    return response.data.coins[0];
+});
+                 
+
 export const coinSlice = createSlice({
     name: "coin",
     initialState: {
         coinList: [],
-        trackingCoins: [],
+        trackingCoins: getFavoriteCoins(),
         coin : {},
-        trendingCoins : [],
+        trendingCoins : [] ,
         coinHistory : {},
+        searchedCoin : [],
         status : 'idle',
         statusChart : 'idle'
     },
     reducers: {
         addCoin: (state, action) => {
             state.trackingCoins.push(action.payload);
+            setFavoriteCoin(action.payload)
         },
         removeCoin: (state, action) => {
             state.trackingCoins = state.trackingCoins.filter(
                 (coin) => coin.id !== action.payload
             );
+            removeFavoriteCoin(action.payload)
         },
     },
     extraReducers: (builder) => {
@@ -80,8 +91,14 @@ export const coinSlice = createSlice({
         builder.addCase(getCoinHistory.fulfilled, (state, action) => {
             state.coinHistory = action.payload
             state.statusChart = 'succeeded'
-        }
-        );
+        });
+        builder.addCase(getCoinQuery.pending, (state, action) => {
+            state.status = 'pending'
+        });
+        builder.addCase(getCoinQuery.fulfilled, (state, action) => {
+            state.searchedCoin = action.payload
+            state.status = 'succeeded'
+        });
     }
 });
 
