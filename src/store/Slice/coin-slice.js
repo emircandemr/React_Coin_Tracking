@@ -53,7 +53,7 @@ export const coinSlice = createSlice({
     },
     reducers: {
         addCoin: (state, action) => {
-            state.trackingCoins.push(action.payload);
+            state.trackingCoins.unshift(action.payload);
             setFavoriteCoin(action.payload)
         },
         removeCoin: (state, action) => {

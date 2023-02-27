@@ -7,7 +7,7 @@ import CoinItem from './CoinItem'
 const CoinList = () => {
 
     const dispatch = useDispatch()
-    const {coinList,trackingCoins,status } = useSelector(state => state.coinTracking)
+    const {coinList} = useSelector(state => state.coinTracking)
     const [currentPage, setCurrentPage] = useState(1)
     const [currentCoinList , setCurrentCoinList] = useState(1)
 
@@ -32,7 +32,7 @@ const CoinList = () => {
 
 
   return (
-    <div className='w-[60%] h-[calc(100vh_-_130px)] border-r border-gray-300 border-opacity-20 mt-4 flex flex-col gap-y-5'>
+    <div className='lg:w-[60%] md:w-[70%] w-full md:h-[calc(100vh_-_130px)] h-1/2 border-r border-gray-300 border-opacity-20 mt-4 flex flex-col justify-center items-center gap-y-5 '>
     {currentCoins.map((coin) => (
         <CoinItem key={coin.id} coin={coin}/>
     ))}

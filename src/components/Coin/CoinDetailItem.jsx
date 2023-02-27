@@ -3,8 +3,8 @@ import { BiTrendingDown, BiTrendingUp } from 'react-icons/bi'
 
 const CoinDetailItem = ({coin}) => {
   return (
-    <div className='w-[70%] h-[15%] rounded-xl p-5 mt-5 flex gap-x-8'>
-    <div className='h-full w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
+    <div className='xl:w-[80%] w-full xl:h-[15%] md:h-[30%] h-full rounded-xl p-5 mt-5 flex flex-wrap justify-center items-center gap-8'>
+    <div className='h-28 w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
         <span className='text-base font-Unbounded tracking-wider '>${coin.market_data?.current_price.usd}</span>
         <span className={`text-sm mt-2 flex justify-center items-center font-Unbounded ${coin.market_data?.price_change_24h > 0 ? 'text-green-500' : 'text-red-500'} `}>
             {
@@ -13,7 +13,7 @@ const CoinDetailItem = ({coin}) => {
             {coin.market_data?.price_change_24h.toFixed(5)}
         </span>            
     </div>
-    <div className='h-full w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
+    <div className='h-28 w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
         <span className={`text-sm font-Unbounded ${coin.market_data?.price_change_percentage_1h_in_currency > 0 ? 'text-green-500' : 'text-red-500' }`}>
             %{coin.market_data?.price_change_percentage_1h_in_currency.usd}
         </span>
@@ -21,7 +21,7 @@ const CoinDetailItem = ({coin}) => {
             1h
         </span>            
     </div>
-    <div className='h-full w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
+    <div className='h-28 w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
         <span className={`text-sm font-Unbounded ${coin.market_data?.price_change_percentage_24h > 0 ? 'text-green-500' : 'text-red-500' }`}>
             %{coin.market_data?.price_change_percentage_24h}
         </span>
@@ -29,7 +29,7 @@ const CoinDetailItem = ({coin}) => {
             24h
         </span>            
     </div>
-    <div className='h-full w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
+    <div className='h-28 w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
         <span className={`text-sm font-Unbounded ${coin.market_data?.price_change_percentage_7d > 0 ? 'text-green-500' : 'text-red-500' }`}>
             %{coin.market_data?.price_change_percentage_7d}
         </span>
@@ -37,7 +37,7 @@ const CoinDetailItem = ({coin}) => {
             7d
         </span>            
     </div>
-    <div className='h-full w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
+    <div className='h-28 w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
         <span className={`text-sm font-Unbounded ${coin.market_data?.price_change_percentage_14d > 0 ? 'text-green-500' : 'text-red-500' }`}>
             %{coin.market_data?.price_change_percentage_14d}
         </span>
@@ -45,7 +45,7 @@ const CoinDetailItem = ({coin}) => {
             14d
         </span>            
     </div>
-    <div className='h-full w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
+    <div className='h-28 w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
         <span className={`text-sm font-Unbounded ${coin.market_data?.price_change_percentage_30d > 0 ? 'text-green-500' : 'text-red-500' }`}>
             %{coin.market_data?.price_change_percentage_30d}
         </span>
@@ -53,7 +53,7 @@ const CoinDetailItem = ({coin}) => {
             30d
         </span>            
     </div>
-    <div className='h-full w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer flex flex-col justify-center items-center'>
+    <div className='h-28 w-32 px-3 rounded-lg bg-[#121212] hover:bg-primary hover:border hover:border-[#212121] box-border cursor-pointer xl:flex hidden flex-col justify-center items-center'>
         <span className={`text-sm font-Unbounded ${coin.market_data?.price_change_percentage_1y > 0 ? 'text-green-500' : 'text-red-500' }`}>
             %{coin.market_data?.price_change_percentage_1y}
         </span>

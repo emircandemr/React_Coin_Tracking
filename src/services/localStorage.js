@@ -14,7 +14,7 @@ export const setFavoriteCoin = (coin) => {
 
 export const removeFavoriteCoin = (coin) => {
     const coins = getFavoriteCoins();
-    const updatedCoins = coins.filter((c) => c.id !== coin.id);
+    const updatedCoins = coins.filter((c) => c.id !== coin);
     localStorage.setItem("coins", JSON.stringify(updatedCoins));
 }
 

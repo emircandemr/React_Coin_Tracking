@@ -8,21 +8,21 @@ import CoinSearch from './Coin/CoinSearch'
 
 const Dashboard = () => {
     const {status } = useSelector(state => state.coinTracking)
-    
+    console.log(status)
     const [search, setSearch] = useState('')
     const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
 
   return (
-    <section className='w-full h-screen pt-3 bg-primary overflow-hidden   '>
+    <section className='w-full h-screen pt-3 bg-primary md:overflow-hidden overflow-y-auto  '>
         {status === 'pending' && <Loading/>}
         <div className='container mx-auto flex flex-col text-white'> 
-            <Header search={search} setSearch={setSearch} setIsSearchModalOpen ={setIsSearchModalOpen}  />
-            <div className='flex'>
+            <Header search={search} setSearch={setSearch} setIsSearchModalOpen={setIsSearchModalOpen}  />
+            <div className='flex flex-col-reverse md:flex-row '>
                 <CoinList/>
                 <WatchList/>
             </div>
         </div>
-            {isSearchModalOpen && <CoinSearch setIsSearchModalOpen={setIsSearchModalOpen}  />}
+            {isSearchModalOpen  && <CoinSearch setIsSearchModalOpen={setIsSearchModalOpen}  />}
     </section>
   )
 }

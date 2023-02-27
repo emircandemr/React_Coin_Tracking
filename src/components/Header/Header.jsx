@@ -24,7 +24,7 @@ const Header = ({search,setSearch,setIsSearchModalOpen}) => {
             <FaHome className='text-2xl text-secondary'/>
             <h1 className='text-2xl  font-Unbounded '>Dashboard</h1>
         </div>
-        <div className='w-[25%]'>
+        <div className='md:w-[25%] md:mr-0 mr-2 w-1/2'>
             <div class="w-full flex justify-center items-center bg-transparent border border-[#212121] rounded-lg p-2  ">
                 <FaSearch className='text-xl text-[#212121]'/>
                 <input 
