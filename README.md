@@ -20,7 +20,7 @@
 
 <div align="center">
 <h2> 🖋️ About</h2>
-<p>This project is a challenge given to candidates during the internship process of Taze company. The project is a Cryptocurrency Tracking Web Application</p>
+<p>This project is a challenge given to candidates during the recruitment process of eQuota company. The project is a coin tracking and reporting application. The application can also search for the coins that the user wants to follow and add them to his portfolio. The coins in their portfolio are shown as a piece-based chart. The portfolio is updated automatically every 20 minutes..</p>
 </div>
 
 <div align="center">
@@ -34,12 +34,9 @@
 
 <div align="center">
 <h2>💻 Project Mobile Views </h2>
-<img src="https://user-images.githubusercontent.com/72731296/221673487-2934a662-b5cc-40b6-93a2-7a233ff9f5cd.png" alt="Image" align="left" width="250" >
-<img src="https://user-images.githubusercontent.com/72731296/221673476-33fc7a43-ae8b-4303-bc25-4dfc5ebb1ad4.png" alt="Image" align="right" width="250" >
+<img src="https://user-images.githubusercontent.com/72731296/221673487-2934a662-b5cc-40b6-93a2-7a233ff9f5cd.png" alt="Image" align="center" width="250" >
+<img src="https://user-images.githubusercontent.com/72731296/221673476-33fc7a43-ae8b-4303-bc25-4dfc5ebb1ad4.png" alt="Image" align="center" width="250" >
 </div>
-
-
-<br>
 
 
 ### 📝 **Tasks**
