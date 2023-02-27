@@ -20,7 +20,7 @@
 
 <div align="center">
 <h2> 🖋️ About</h2>
-<p>This project is a challenge given to candidates during the recruitment process of eQuota company. The project is a coin tracking and reporting application. The application can also search for the coins that the user wants to follow and add them to his portfolio. The coins in their portfolio are shown as a piece-based chart. The portfolio is updated automatically every 20 minutes..</p>
+<p>This project is a challenge given to candidates during the internship process of Taze company. The project is a Cryptocurrency Tracking Web Application</p>
 </div>
 
 <div align="center">
@@ -38,6 +38,7 @@
 <img src="https://user-images.githubusercontent.com/72731296/221673476-33fc7a43-ae8b-4303-bc25-4dfc5ebb1ad4.png" alt="Image" align="right" width="250" >
 </div>
 
+<br/>
 ### 📝 **Tasks**
  - ✅ We should be able to see the list of all cryptocurrencies in the system with current prices.
  - ✅ Logo-Cryptocurrency name in the list - Price - Price change in the last 24 hours - 24-hour volume information should be displayed.
