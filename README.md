@@ -15,7 +15,8 @@
 <div align="center">
 <h3>✨ Live Version </h3>
 
-### [You can see the live version here.](https://vue2-equota-case.vercel.app)
+### [You can see the live version here.](https://react-coin-tracking.vercel.app)
+
 </div>
 
 <div align="center">
