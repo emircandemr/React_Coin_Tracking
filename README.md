@@ -38,7 +38,10 @@
 <img src="https://user-images.githubusercontent.com/72731296/221673476-33fc7a43-ae8b-4303-bc25-4dfc5ebb1ad4.png" alt="Image" align="right" width="250" >
 </div>
 
-<br/>
+
+<br>
+
+
 ### 📝 **Tasks**
  - ✅ We should be able to see the list of all cryptocurrencies in the system with current prices.
  - ✅ Logo-Cryptocurrency name in the list - Price - Price change in the last 24 hours - 24-hour volume information should be displayed.
